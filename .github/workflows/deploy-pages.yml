@@ -30,8 +30,8 @@ jobs:
           cp index.html styles.css _site/
           cp -r images _site/
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+      # configure-pages omitted: it calls the Pages API and fails with 404 until the repo has
+      # Settings → Pages → Build and deployment → Source: GitHub Actions (one-time).
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -40,4 +40,4 @@ jobs:
 
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
